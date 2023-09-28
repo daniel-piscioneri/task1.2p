@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>String Length</p>
+        <p id="js"></p>
+    
+        <p>String Slice</p>
+        <p id="slice"></p>
+    
+        <p>SubString</p>
+        <p id="substring"></p>
+    
+        <p>SubStr</p>
+        <p id="substr"></p>
+    
+        <p>charAt</p>
+        <p id="char"></p>
+    </div>
+    <div>
+        <p>Numbers</p>
+        <p id="number"></p>
+
+        <p>Addition</p>
+        <p id="addition"></p>
+        <p>Will not always be 100% accurate</p>
+
+        <p>Add</p>
+        <p id="add"></p>
+
+        <p>NaN - Not a Number</p>
+        <p id="nan"></p>
+
+        <p>Infinity</p>
+        <p id="txt"></p>
+    </div>
+    <div>
+        <h2>Array</h2>
+
+        <p>Content</p>
+        <p id="content"></p>
+
+        <p>Size</p>
+        <p id="size"></p>
+
+        <p>New Array</p>
+        <p id="content2"></p>
+
+        <p>Append</p>
+        <p id="newcontent"></p>
+
+        <p>Unshift</p>
+        <p id="unshift"></p>
+    </div>
+    <div>
+        <h2>Date Methods</h2>
+
+        <p>Current Date and Time</p>
+        <p id="date"></p>
+
+        <p>Add Milliseconds</p>
+        <p id="addtime"></p>
+
+        <p>Remove Milliseconds</p>
+        <p id="removetime"></p>
+
+        <p>Custom Date</p>
+        <p id="dad"></p>
+
+        <p>UTC Format</p>
+        <p id="format"></p>
+    </div>
+    <div>
+        <h2>Functions</h2>
+
+        <p>Multiply</p>
+        <p id="function1"></p>
+
+        <p>Using Functions we can convert Miles into Kilometres</p>
+        <p id="milestoKM"></p>
+
+    </div>
+    
+
+    <script>
+        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let length = text.length;
+        document.getElementById("js").innerHTML = length;
+
+        let text2 = "Apple, Banana, Kiwi";
+        let part = text2.slice(-12,-7);
+        document.getElementById("slice").innerHTML = part;
+        // Using two parameters in the slice constructor will produce the string within the range
+        // Using one parameter will print from that character to the end of the string
+        // Using negative numbers will print from the end of the string
+
+        let text3 = "Apple, Banana, Kiwi";
+        let substring = text3.substring(7, 13);
+        document.getElementById("substring").innerHTML = substring;
+
+        let text4 = "Apple, Banana, Kiwi";
+        let substr = text4.substr(7,6);
+        document.getElementById("substr").innerHTML = substr;
+        // Using two parameters in the substr constructor will produce the string with the first parameter being the start of the string and the second paramter the length produced
+
+        let text5 = "Apple, Banana, Kiwi";
+        let char = text5.charAt(1);
+        document.getElementById("char").innerHTML = char;
+        // The following will produce the character at the poisition identified within the function
+
+        let x = 3.14;
+        let y = 3;
+        document.getElementById("number").innerHTML = x + "<br>" + y;
+
+        let addition = 0.2 + 0.1;
+        document.getElementById("addition").innerHTML = addition;
+
+        let number = 10;
+        let string = "20";
+        let add = number + string;
+        document.getElementById("add").innerHTML = add;
+
+        let nan = 100/"Apple";
+        document.getElementById("nan").innerHTML = nan;
+
+        let myNumber = 2;
+        let txt = "";
+        while (myNumber != Infinity) {
+            myNumber = myNumber * myNumber;
+            txt = txt + myNumber + "<br>";
+        }
+        document.getElementById("txt").innerHTML = txt;
+
+
+        // ARRAY
+        const fruits = ["banana", "orange", "apple", "mango"]
+
+        //print the contents of the array
+        document.getElementById("content").innerHTML = fruits.join(", ");
+        
+        //defines the size of the array
+        let size =  fruits.length;
+        document.getElementById("size").innerHTML = size;
+
+        // Pop
+        fruits.pop();
+        document.getElementById("content2").innerHTML = fruits.join(", ");
+
+        // Append
+        fruits.push("kiwi");
+        document.getElementById("newcontent").innerHTML = fruits.join(", ");
+
+        // Unshift
+        fruits.unshift("dragonfruit");
+        document.getElementById("unshift").innerHTML = fruits.join(", ");
+
+
+        // Date
+        const d = new Date();
+        document.getElementById("date").innerHTML = d;
+
+        // Date plus milliseconds
+        const d2 = new Date(10000000000000);
+        document.getElementById("addtime").innerHTML = d2;
+
+        // Date remove milliseconds
+        const d3 = new Date(-10000000000000);
+        document.getElementById("removetime").innerHTML = d3;
+
+        const d4 = new Date(73,6,2);
+        document.getElementById("dad").innerHTML = d4;
+
+        const d5 = new Date();
+        document.getElementById("format").innerHTML = d5.toUTCString();
+
+        // Functions
+        function myFunction(x,y) {
+            return x * y;
+        }
+        let result = myFunction(9,7);
+        document.getElementById("function1").innerHTML = result;
+
+        function MilestoKM(miles){
+            return miles * 1.60934;
+        }
+        let kilometres = "60 Miles in Kilometores becomes: " + MilestoKM(60) + " Kilometores";
+        document.getElementById("milestoKM").innerHTML = kilometres;
+
+
+    </script>
+</body>
+</html>
